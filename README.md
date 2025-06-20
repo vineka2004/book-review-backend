@@ -2,9 +2,6 @@
 
 This is the Express.js backend for the **Book Review Platform**. It provides APIs for user authentication, book listings, and review submissions.
 
-## 🌐 Live API URL  
-👉 https://book-review-backend-kq9i.onrender.com
-
 ## 🛠️ Tech Stack
 
 - 🟩 Node.js  
