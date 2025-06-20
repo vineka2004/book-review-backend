@@ -25,7 +25,6 @@ npm install
 Create a `.env` file in the root directory with the following content:
 
 ```
-MONGO_URI=mongodb+srv://vineka:vineka@cluster0.bbbcav1.mongodb.net/bookreviewdb?retryWrites=true&w=majority&appName=Cluster0
 PORT=5000
 
 ```
