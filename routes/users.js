@@ -3,17 +3,6 @@ const router = express.Router();
 const User = require("../models/User");
 
 
-router.post("/", async (req, res) => {
-  const { name, bio } = req.body;
-  try {
-    const newUser = new User({ name, bio });
-    await newUser.save();
-    res.status(201).json(newUser);
-  } catch (err) {
-    console.error("❌ Error creating user:", err);
-    res.status(400).json({ error: "Failed to create user" });
-  }
-});
 
 router.get("/:id", async (req, res) => {
   try {
@@ -41,26 +30,22 @@ router.put("/:id", async (req, res) => {
     res.status(400).json({ error: "Failed to update profile" });
   }
 });
-
-router.post("/register", async (req, res) => {
-  const { name, email, password, bio } = req.body;
-  const existing = await User.findOne({ email });
-  if (existing) return res.status(400).json({ error: "User already exists" });
-
-  const newUser = new User({ name, email, password, bio });
-  await newUser.save();
-  res.status(201).json(newUser);
-});
-
-
-router.post("/login", async (req, res) => {
-  const { email, password } = req.body;
-  const user = await User.findOne({ email });
-  if (!user || user.password !== password) {
-    return res.status(400).json({ error: "Invalid credentials" });
+// Add this to routes/users.js
+router.post("/", async (req, res) => {
+  const { username, password, name, bio } = req.body;
+  try {
+    const newUser = await User.create({ username, password, name, bio });
+    res.status(201).json(newUser);
+  } catch (err) {
+    console.error("❌ Error creating user:", err);
+    res.status(400).json({ error: "Failed to create user" });
   }
-  res.json(user); 
 });
+
+
+
+
+
 
 
 module.exports = router;

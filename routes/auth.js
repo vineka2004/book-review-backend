@@ -4,6 +4,8 @@ const User = require("../models/User");
 
 router.post("/", async (req, res) => {
   const { name, bio, username, password } = req.body;
+  console.log("📥 Incoming registration:", req.body); // ✅ Add this
+
 
   if (!username || !password) {
     return res.status(400).json({ error: "Username and password are required" });
