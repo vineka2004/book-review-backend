@@ -84,8 +84,8 @@ npm test
 ---
 ## 📊 Coverage Screenshot
 
-(![coverage](https://github.com/user-attachments/assets/deed6dfb-516f-47b9-ba53-ed9c3ad87167)
-)
+![coverage](https://github.com/user-attachments/assets/deed6dfb-516f-47b9-ba53-ed9c3ad87167)
+
 
 
 ---
